@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ehi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f7;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #f94fa4;
+            margin: 1;
+            transition: background-color 0.5s;
+        }
+        .container {
+            text-align: center;
+            font-size: 3.5rem;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1em;
+            color: white;
+            background-color: #ff66b2;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button.no {
+            background-color: #ff99cc;
+            position: relative;
+        }
+        .dedica {
+            display: none;
+            width: 80%;
+            max-width: 500px;
+            padding: 30px;
+            background-color: #fff;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5em;
+            color: #ff66b2;
+            text-align: center;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="question-section">
+        <p>Vero che è bellissima la teuccia????!!!!?!</p>
+        <div class="button-container">
+            <button class="button yes" onclick="showDedica()">SI</button>
+            <button class="button no" onmouseover="moveButton()">NO</button>
+        </div>
+    </div>
+    <div class="dedica" id="dedica-section">
+        <p>Lo sapevo che avresti detto sì(ci mancherebbe altro sei un diamantino<3)!</p>
+        <p>amore mio, ti amo, stai diventando na vecha eh
+            Passa un bellissimo compleanno.
+
+            Sei la mia bff,sei l'unica persona al mondo che mi conosce così bene, e devi esserne fiera perché non lo faccio mai e se mi sono aperta con te è perché mi hai ispirato qualcosa,non so precisamente cosa, che mi ha fatto capire che con te potevo parlare di tutto
+            perciò smettila sempre di sottovalutarti, perché sei speciale anche tu.
+            Non sono brava con le dediche, vorrei solo abbracciarti ok stupidotta
+
+            TVB un mondo
+            Alla mia pookie bookie cookie tookie
+        </p>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noButton = document.querySelector('.button.no');
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = "absolute";
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
+        }
+
+        function showDedica() {
+            document.getElementById("question-section").style.display = "none";
+            document.getElementById("dedica-section").style.display = "block";
+            document.body.style.backgroundColor = "#ffccf2";
+        }
+    </script>
+</body>
+</html>
